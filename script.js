@@ -2,19 +2,19 @@ document.getElementById('change_button').addEventListener('click', () => {
     const blockId = document.getElementById('block_id').value;
     const color = document.getElementById('colour_id').value;
 
-    // Reset all grid items to transparent
-    const gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach(item => item.style.backgroundColor = 'transparent');
-
-    // Change the color of the specified grid item
-    const block = document.getElementById(blockId);
-    if (block) {
-        block.style.backgroundColor = color;
+    if (blockId && color) {
+        const block = document.getElementById(blockId);
+        if (block) {
+            block.style.backgroundColor = color;
+        } else {
+            console.log('Invalid Block ID');
+        }
+    } else {
+        console.log('Please enter valid inputs');
     }
 });
 
-document.getElementById('reset_button').addEventListener('click', () => {
-    // Reset all grid items to transparent
+document.getElementById('Reset').addEventListener('click', () => {
     const gridItems = document.querySelectorAll('.grid-item');
     gridItems.forEach(item => item.style.backgroundColor = 'transparent');
 });
